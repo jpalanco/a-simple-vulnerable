@@ -1,0 +1,21 @@
+GEM
+  remote: https://rubygems.org/
+  specs:
+    actionmailer (4.2.7)
+    actionpack (4.2.7)
+    actionview (4.2.7)
+    ...
+    rack (1.6.0)
+    nokogiri (1.6.7)
+    devise (3.5.2)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  rails (= 4.2.7)
+  nokogiri (= 1.6.7)
+  rack (= 1.6.0)
+  devise (= 3.5.2)
+  bootstrap-sass (= 3.3.6)
+

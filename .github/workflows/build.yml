@@ -1,0 +1,17 @@
+name: Build
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest  # Uso de la máquina completa
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Grant execute permission for build.sh
+      run: chmod +x ./build.sh
+
+    - name: Build the application
+      run: ./build.sh

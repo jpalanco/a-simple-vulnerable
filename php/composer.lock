@@ -1,0 +1,28 @@
+{
+    "content-hash": "d5f6b43f...",
+    "packages": [
+        {
+            "name": "symfony/symfony",
+            "version": "v2.7.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/symfony.git",
+                "reference": "c8d072c..."
+            },
+            ...
+        },
+        {
+            "name": "monolog/monolog",
+            "version": "1.12.0",
+            ...
+        }
+    ],
+    "packages-dev": [
+        {
+            "name": "phpunit/phpunit",
+            "version": "4.8.0",
+            ...
+        }
+    ]
+}
+

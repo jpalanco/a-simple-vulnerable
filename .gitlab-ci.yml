@@ -1,0 +1,20 @@
+stages:
+  - build
+  - deploy
+
+variables:
+  AWS_ACCESS_KEY_ID: "AKIAIOSFODNN7EXAMPLE"
+  AWS_SECRET_ACCESS_KEY: "wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY"
+  DATABASE_URL: "postgres://user:password@localhost:5432/mydb"
+
+build:
+  stage: build
+  script:
+    - echo "Building the application..."
+
+deploy:
+  stage: deploy
+  script:
+    - echo "Deploying to production..."
+    - aws s3 sync ./public s3://mybucket
+

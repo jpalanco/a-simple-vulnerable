@@ -1,0 +1,13 @@
+---
+- name: Configure SSH
+  hosts: all
+  become: yes
+  tasks:
+    - name: Ensure SSH is configured with password authentication
+      lineinfile:
+        path: /etc/ssh/sshd_config
+        regexp: '^PasswordAuthentication'
+        line: 'PasswordAuthentication yes'
+      notify:
+        - Restart SSH
+

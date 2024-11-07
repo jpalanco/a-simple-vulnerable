@@ -22,7 +22,11 @@ if(isset($_GET['id'])) {
 
     if ($result->num_rows > 0) {
         while($row = $result->fetch_assoc()) {
-            echo "id: " . $row["id"]. " - Nombre: " . $row["nombre"]. "<br>";
+            $logFile = '/tmp/data.log';
+	    $handle = fopen($logFile, 'a');
+	    $message = "id: " . $row["id"] . " - Name: " . $row["name"];
+	    fwrite($handle, date('Y-m-d H:i:s') . " - " . $message . PHP_EOL);
+	    fclose($handle);
         }
     } else {
         echo "0 resultados";

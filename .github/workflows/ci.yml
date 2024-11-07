@@ -1,0 +1,17 @@
+name: CI
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Build the application
+      run: |
+        echo "Building the app"
+        echo ${{ secrets.DEPLOYMENT_KEY }}  # Uso directo de secretos en comandos de shell
+

@@ -1,0 +1,14 @@
+{
+  "name": "vulnerable-php-app",
+  "description": "A PHP application with vulnerable dependencies",
+  "require": {
+    "symfony/symfony": "2.7.0",
+    "monolog/monolog": "1.12.0",
+    "twig/twig": "1.24.0",
+    "guzzlehttp/guzzle": "6.2.0"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "4.8.0"
+  }
+}
+
