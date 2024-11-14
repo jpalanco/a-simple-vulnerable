@@ -1,3 +1,4 @@
+import io.github.pixee.security.ObjectInputFilters;
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
@@ -13,6 +14,7 @@ public class DeserializationServlet extends HttpServlet {
 
             // Vulnerability: Deserialization of untrusted data
             ObjectInputStream ois = new ObjectInputStream(new ByteArrayInputStream(serializedData));
+            ObjectInputFilters.enableObjectFilterIfUnprotected(ois);
             Object obj = ois.readObject();
             ois.close();
 
