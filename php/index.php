@@ -13,6 +13,7 @@ if ($conn->connect_error) {
     die("Conexión fallida: " . $conn->connect_error);
 }
 
+
 // Vulnerabilidad de SQL Injection
 // El siguiente código es vulnerable a SQL Injection ya que el input del usuario se concatena directamente en la consulta SQL sin validación o sanitización.
 if(isset($_GET['id'])) {
@@ -32,6 +33,7 @@ if(isset($_GET['id'])) {
         echo "0 resultados";
     }
 }
+
 
 // Vulnerabilidad de Cross-Site Scripting (XSS)
 // El siguiente código es vulnerable a XSS ya que imprime directamente en el HTML el contenido de una variable que puede ser manipulada por el usuario sin ninguna sanitización.
