@@ -10,7 +10,7 @@ public class DeserializationController : Controller
     {
         byte[] serializedData = Request.BinaryRead(Request.ContentLength);  // User-provided input
 
-        BinaryFormatter formatter = new BinaryFormatter();
+        System.Text.Json.JsonSerializer formatter = new System.Text.Json.JsonSerializer();
         using (MemoryStream ms = new MemoryStream(serializedData))
         {
             // Vulnerability: Insecure deserialization of untrusted input
