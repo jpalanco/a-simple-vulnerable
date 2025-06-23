@@ -1,5 +1,5 @@
-import { exec } from 'child_process';
-import express from 'express';
+const { execFile } = require('child_process');
+const express = require('express');
 
 const app = express();
 
@@ -25,18 +25,16 @@ app.post('/run-command', (req, res) => {
         if (error) {
             res.status(500).send(`Error executing command: ${error.message}`);
             return;
-@ -22,6 +34,7 @@ app.post('/run-command', (req, res) => {
+        }
+        if (stderr) {
+            res.status(500).send(`Command stderr: ${stderr}`);
+            return;
+        }
+
         res.send(`Command output: ${stdout}`);
     });
 });
-});
-
-app.listen(3000, () => {
-    console.log('Server is running on port 3000');
-    });
-});
 
 app.listen(3000, () => {
     console.log('Server is running on port 3000');
 });
-
